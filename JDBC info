@@ -1,0 +1,85 @@
+🎯 Interview Answer – JDBC
+1. Definition
+
+👉 JDBC stands for Java Database Connectivity.
+It is a Java API (Application Programming Interface) that allows Java applications to connect to, interact with, and perform operations on databases in a standardized way.
+
+2. Why JDBC?
+
+Before JDBC, every database had its own API (Oracle API, MySQL API, etc.).
+
+JDBC provides a uniform interface to work with any relational database.
+
+Database vendors provide their own JDBC drivers that implement this API.
+
+3. Architecture
+
+JDBC follows a two-layer architecture:
+
+JDBC API (Java side): Provided by Java, defines interfaces like Connection, Statement, etc.
+
+JDBC Driver (Database side): Provided by DB vendors, converts JDBC calls into database-specific calls.
+
+4. Important Terminologies in JDBC
+
+DriverManager
+
+Class that manages all database drivers.
+
+Used to establish a connection using getConnection().
+
+Connection
+
+Interface representing a session with the database.
+
+Used to create statements and manage transactions.
+
+Statement
+
+Interface to execute static SQL queries (simple queries).
+
+Example: SELECT * FROM student.
+
+PreparedStatement
+
+Precompiled SQL statement.
+
+Supports parameters (? placeholders).
+
+Faster and safer (avoids SQL Injection).
+
+CallableStatement
+
+Used to call stored procedures in the database.
+
+ResultSet
+
+Interface that holds the data retrieved from a query.
+
+Provides cursor-based navigation (next(), previous()).
+
+JDBC Driver Types
+
+Type 1: JDBC-ODBC Bridge Driver
+
+Type 2: Native-API Driver
+
+Type 3: Network Protocol Driver
+
+Type 4: Thin Driver (Pure Java, most used in real projects)
+
+5. JDBC Workflow
+
+Step-by-step process:
+
+Load the Driver
+
+Establish a Connection
+
+Create a Statement / PreparedStatement
+
+Execute Query (executeQuery or executeUpdate)
+
+Process the ResultSet
+
+Close the resources
